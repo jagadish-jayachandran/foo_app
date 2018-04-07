@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 
-export class Header extends Component {
-  render() {
+export const Header = (props) => {
+
     return (
       <nav className="navbar navbar-default">
         <div className="container">
           <div className="navbar-header">
             <ul className="nav navbar-nav">
-              <li><a href="">Home</a></li>
+              <li><a href="">{this.homeLink}</a></li>
             </ul>
           </div>
         </div>
       </nav>
     );
-  }
-}
+  };

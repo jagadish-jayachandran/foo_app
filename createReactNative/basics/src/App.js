@@ -6,6 +6,19 @@ import Home from './components/Home';
 
 import Footer from './components/Footer';
 class App extends Component {
+constructor(props){
+  super(props);
+  this.state = {
+      homeLink : "Home"
+  };
+}
+
+  onChangeLinkName(newName) {
+    this.setState({
+       homeLink: newName 
+      });
+  }
+
   onGreet(){
     alert("Hello!");
   }
@@ -21,14 +34,18 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
           <div>
-            <Header />
+            <Header homeLink={this.state.homeLink} />
           </div>
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div>
-          <Home user={user} greet={this.onGreet} />
+          <Home 
+          user={user} 
+          greet={this.onGreet} 
+            changeLink={this.onChangeLinkName.bind(this)}
+          />
         </div>
 
         <i className="devicons devicons-vim"><Footer /></i>
