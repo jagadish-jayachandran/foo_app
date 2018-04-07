@@ -34,7 +34,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
           <div>
-            <Header homeLink={this.state.homeLink} />
+            <Header homeLinkHead={this.state.homeLink} />
           </div>
         </header>
         <div>
@@ -42,10 +42,12 @@ class App extends Component {
             user={user}
             greet={this.onGreet}
             changeLink={this.onChangeLinkName.bind(this)}
+            initialLinkName={this.state.homeLink}
           />
         </div>
-
-        <i className="devicons devicons-vim"><Footer copy={"copyrights goes here"} /></i>
+        <div id="">
+          <Footer copy={"copyrights goes here"} />
+        </div>
       </div>
     );
   }

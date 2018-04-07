@@ -11,14 +11,18 @@ export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      homeLink: "Changed Link"
+      homeLink: props.initialLinkName
     };
   }
 
   onChangeLink() {
     this.props.changeLink(this.state.homeLink);
   }
-
+  onHandleChange(event) {
+    this.setState({
+      homeLink: event.target.value
+    });
+  }
   render() {
 
     return (
@@ -29,7 +33,8 @@ export default class Home extends Component {
           <ul>{this.props.user.hobbies.map((hobby, i) => <li key={i}>{hobby}</li>)}</ul>
         </div>
         <button onClick={this.props.greet} className="btn btn-primary">Click</button>
-
+        <input type="text" value={this.state.homeLink}
+          onChange={(event) => this.onHandleChange(event)} />
         <button onClick={this.onChangeLink.bind(this)} className="btn btn-primary" >Change Header</button>
       </div>
     );

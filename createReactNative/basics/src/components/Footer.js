@@ -7,7 +7,7 @@ const Footer = (props) => {
   return (
     <div>
       <p>text goes here for footer</p>
-      <p>{this.copy}</p>
+      <p>{props.copy}</p>
     </div>
   );
 }
