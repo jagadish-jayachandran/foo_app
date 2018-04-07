@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-export const Header = (props) => {
-
+export class Header extends Component {
+  render() {
     return (
       <nav className="navbar navbar-default">
         <div className="container">
@@ -13,4 +13,5 @@ export const Header = (props) => {
         </div>
       </nav>
     );
-  };
+  }
+}

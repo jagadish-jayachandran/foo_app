@@ -6,20 +6,20 @@ import Home from './components/Home';
 
 import Footer from './components/Footer';
 class App extends Component {
-constructor(props){
-  super(props);
-  this.state = {
-      homeLink : "Home"
-  };
-}
+  constructor(props) {
+    super(props);
+    this.state = {
+      homeLink: "Home"
+    };
+  }
 
   onChangeLinkName(newName) {
     this.setState({
-       homeLink: newName 
-      });
+      homeLink: newName
+    });
   }
 
-  onGreet(){
+  onGreet() {
     alert("Hello!");
   }
   render() {
@@ -27,7 +27,7 @@ constructor(props){
       name: "jaga",
       hobbies: ["cricket", "Tennis"]
     }
-    
+
     return (
       <div className="App">
         <header className="App-header">
@@ -37,18 +37,15 @@ constructor(props){
             <Header homeLink={this.state.homeLink} />
           </div>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
         <div>
-          <Home 
-          user={user} 
-          greet={this.onGreet} 
+          <Home
+            user={user}
+            greet={this.onGreet}
             changeLink={this.onChangeLinkName.bind(this)}
           />
         </div>
 
-        <i className="devicons devicons-vim"><Footer /></i>
+        <i className="devicons devicons-vim"><Footer copy={"copyrights goes here"} /></i>
       </div>
     );
   }

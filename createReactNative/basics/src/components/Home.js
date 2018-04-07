@@ -15,7 +15,7 @@ export default class Home extends Component {
     };
   }
 
-  ocChangeLink() {
+  onChangeLink() {
     this.props.changeLink(this.state.homeLink);
   }
 
@@ -30,7 +30,7 @@ export default class Home extends Component {
         </div>
         <button onClick={this.props.greet} className="btn btn-primary">Click</button>
 
-        <button onClick={() => this.onChangeLink()} className="btn btn-primary" >Change Header</button>
+        <button onClick={this.onChangeLink.bind(this)} className="btn btn-primary" >Change Header</button>
       </div>
     );
   }
