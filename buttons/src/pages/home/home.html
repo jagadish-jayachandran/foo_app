@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Buttons
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-row>
+        <ion-col col-9>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="newItem" placeholder="New item"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col>
+            <button ion-button (click)="add()">Add</button>
+        </ion-col>
+    </ion-row>
+
+
+    <button ion-button (click)="view()">View</button>
+
+
+</ion-content>
