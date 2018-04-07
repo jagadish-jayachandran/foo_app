@@ -1,8 +1,13 @@
 {
-  "name": "app3",
-  "app_id": "1497577f",
-  "type": "ionic-angular",
-  "integrations": {
-    "cordova": {}
-  }
+    "name": "app3",
+    "app_id": "1497577f",
+    "type": "ionic-angular",
+
+    "integrations": {
+        "cordova": {}
+    },
+    "proxies": [{
+        "path": "/v1",
+        "proxyUrl": "https://ai.jaga.com/v1"
+    }]
 }

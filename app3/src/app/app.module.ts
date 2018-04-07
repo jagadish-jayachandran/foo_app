@@ -11,7 +11,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FirstPage } from '../pages/first/first';
-import { EditpagePage } from '../pages/editpage/editpage';
+import { AuthserviceProvider } from '../providers/authservice/authservice';
+import { HttpModule } from '@angular/http/';
+import { HttpProvider } from '../providers/http/http';
 
 
 
@@ -22,11 +24,11 @@ import { EditpagePage } from '../pages/editpage/editpage';
     ContactPage,
     HomePage,
     FirstPage,
-    EditpagePage,
+    
     TabsPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -36,13 +38,15 @@ import { EditpagePage } from '../pages/editpage/editpage';
     ContactPage,
     HomePage,
     FirstPage,
-    EditpagePage,
+    
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthserviceProvider,
+    HttpProvider
   ]
 })
 export class AppModule {}
